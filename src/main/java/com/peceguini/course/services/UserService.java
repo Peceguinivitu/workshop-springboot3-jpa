@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.peceguini.course.entites.User;
+import com.peceguini.course.entities.User;
 import com.peceguini.course.repositories.UserRepository;
 
 @Service

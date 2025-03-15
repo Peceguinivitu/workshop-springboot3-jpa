@@ -1,4 +1,4 @@
-package com.peceguini.course.entites;
+package com.peceguini.course.entities;
 
 import java.io.Serializable;
 import java.time.Instant;

@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.peceguini.course.entites.Order;
+import com.peceguini.course.entities.Order;
 import com.peceguini.course.repositories.OrderRepository;
 
 @Service

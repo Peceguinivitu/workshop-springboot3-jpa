@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.peceguini.course.entites.Order;
+import com.peceguini.course.entities.Order;
 import com.peceguini.course.services.OrderService;
 
 
