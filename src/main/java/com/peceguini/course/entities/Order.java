@@ -66,7 +66,7 @@ public void setMoment(Instant moment) {
 
 
 public OrderStatus getOrderstatus() {
-	return OrderStatus.valueof(orderstatus);
+	return OrderStatus.valueOf(orderstatus);
 }
 
 public void setOrderstatus(OrderStatus orderstatus) {
