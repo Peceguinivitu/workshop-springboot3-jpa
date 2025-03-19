@@ -3,7 +3,8 @@ package com.peceguini.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-import com.peceguini.course.entities.pk.OrdemItemPK;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.peceguini.course.entities.pk.OrderitemPK;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -11,37 +12,37 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table (name = "tb_order_item")
-public class OrdemItem implements Serializable {
+public class OrderItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private OrdemItemPK id;
+	private OrderitemPK id = new OrderitemPK();
 	
 	private Integer quantity;
 	private Double price;
 	
-	public OrdemItem(){
+	public OrderItem(){
 		
 	}
-	public OrdemItem( Order order, Product product, Integer quantity, Double price) {
-		super(); 
+	public OrderItem( Order order, Product product, Integer quantity, Double price) {
+		super();
 		id.setOrder(order);
 		id.setProduct(product);
 		this.quantity=quantity;
 		this.price=price;
 	}
-	
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 	}
 	public void setOrder(Order order ) {
-		id.setOrder(getOrder());
+		id.setOrder(order);
 	}
 	public Product getProduct() {
 		return id.getProduct();
 	}
 	public void setProduct(Product product) {
-		id.setOrder(getOrder());
+		id.setProduct(product);
 	}
 	
 	
@@ -70,7 +71,7 @@ public class OrdemItem implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		OrdemItem other = (OrdemItem) obj;
+		OrderItem other = (OrderItem) obj;
 		return Objects.equals(id, other.id);
 	}
 	
