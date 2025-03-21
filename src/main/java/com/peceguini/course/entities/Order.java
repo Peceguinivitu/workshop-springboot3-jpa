@@ -107,6 +107,17 @@ public void setPayment(Payment payment) {
 public Set<OrderItem> getItems(){
 	return Items;
 }
+
+public Double getTotal() {
+	double sum = 0.0;
+	for (OrderItem x : Items) {
+		  sum += x.getSubtotal();
+	}
+	return sum;
+}
+
+
+
 @Override
 public int hashCode() {
 	return Objects.hash(id);
