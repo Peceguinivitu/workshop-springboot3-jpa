@@ -1,9 +1,9 @@
 package com.peceguini.course.resources;
 
 import java.net.URI;
+
 import java.util.List;
 
-import javax.management.remote.JMXServiceURL;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
