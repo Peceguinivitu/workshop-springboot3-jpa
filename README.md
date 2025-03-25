@@ -23,7 +23,8 @@ Projeto desenvolvido durante o curso da [DevSuperior](https://devsuperior.com.br
 ✔️ **Relações Many-to-Many** entre Produtos e Categorias  
 ✔️ **Validação de dados** nos endpoints  
 ✔️ **Tratamento de erros** personalizado  
-✔️ **Filtros** por categoria e preço  
+✔️ **Filtros** por categoria e preço
+
 
 ## 💻 Tecnologias
 
@@ -40,12 +41,42 @@ Projeto desenvolvido durante o curso da [DevSuperior](https://devsuperior.com.br
   ![Postman](https://img.shields.io/badge/Postman-FF6C37?logo=postman)
   ![Maven](https://img.shields.io/badge/Maven-3.8-C71A36?logo=apache-maven)
 
-## 🏃 Como Executar
+
+
+
+  ## 🏃 Como Executar
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/seu-usuario/seu-projeto.git
+git clone https://github.com/Peceguinivitu/workshop-springboot3-jpa
 
 # 2. Execute o projeto
 mvn spring-boot:run
   
+
+
+
+## 🧪 Testes de API via Postman
+
+### 🔍 Visão Geral
+Todos os endpoints foram testados via Postman, seguindo boas práticas REST:
+- **Códigos de status** HTTP adequados
+- **Validação de esquema** JSON
+- **Testes de erro** (404, 400, etc.)
+
+---
+
+### 👥 **Testes de Usuários (`/users`)**
+#### `GET /users` - Listagem
+**Request:**
+```http
+GET http://localhost:8093/users
+Accept: application/json
+
+
+
+
+
+
+
+
