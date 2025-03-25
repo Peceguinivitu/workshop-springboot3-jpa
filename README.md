@@ -52,6 +52,7 @@ git clone https://github.com/Peceguinivitu/workshop-springboot3-jpa
 
 # 2. Execute o projeto
 mvn spring-boot:run
+```
   
 
 
