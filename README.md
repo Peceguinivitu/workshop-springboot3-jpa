@@ -13,9 +13,16 @@ Projeto desenvolvido durante o curso da [DevSuperior](https://devsuperior.com.br
 - [Como Executar](#-como-executar)
 - [Endpoints](#-endpoints)
 
+
+
+
 ## 🔍 Diagrama do Sistema
 ![Modelo de Domínio](https://github.com/user-attachments/assets/a63e366d-1cec-43a5-874e-18af72da6022)  
 *(Diagrama das entidades User, Product e Category com seus relacionamentos)*
+
+
+
+
 
 ## 🚀 Funcionalidades
 
@@ -44,6 +51,8 @@ Projeto desenvolvido durante o curso da [DevSuperior](https://devsuperior.com.br
 
 
 
+
+
   ## 🏃 Como Executar
 
 ```bash
@@ -57,6 +66,8 @@ mvn spring-boot:run
 
 
 
+
+
 ## 🧪 Testes de API via Postman
 
 ### 🔍 Visão Geral
@@ -66,13 +77,130 @@ Todos os endpoints foram testados via Postman, seguindo boas práticas REST:
 - **Testes de erro** (404, 400, etc.)
 
 ---
+## 🌐 Endpoints 
 
-### 👥 **Testes de Usuários (`/users`)**
-#### `GET /users` - Listagem
-**Request:**
+### 👤 **Usuários** (`/users`)
+| Método | Endpoint          | Descrição                     | Status |
+|--------|-------------------|-------------------------------|--------|
+| POST   | `/users`          | Cria novo usuário             | 201    |
+| GET    | `/users`          | Lista todos usuários          | 200    |
+| GET    | `/users/{id}`     | Busca usuário por ID          | 200    |
+| PUT    | `/users/{id}`     | Atualiza usuário              | 200    |
+| DELETE | `/users/{id}`     | Remove usuário                | 204    |
+
+**Exemplo de criação:**
 ```http
-GET http://localhost:8093/users
-Accept: application/json
+POST http://localhost:8093/users
+Content-Type: application/json
+
+{
+  "name": "Maria Silva",
+  "email": "maria@email.com",
+  "password": "*****",
+  "phone": "11999999999"
+}
+```
+
+### 📦 **Produtos** (`/Produtos`)
+| Método | Endpoint          | Descrição                     | Status |
+|--------|-------------------|-------------------------------|--------|
+| GET    | `/Produtos`          | Lista todos produtos          | 200    |
+| GET    | `/Produtos/{id}`     | Busca produtos por ID          | 200    |
+
+**Exemplo:**
+```http
+GET http://localhost:8093/products
+Content-Type: application/json
+
+{
+  "id": 1,
+        "name": "The Lord of the Rings",
+        "descripton": "Lorem ipsum dolor sit amet, consectetur.",
+        "price": 90.5,
+        "imgUrl": ""
+        "categories": [
+    {
+      "id": 2,
+      "name": "Books"
+    }
+  ]
+
+
+}
+
+```
+### 🏷️ **Categorias** (`/categories`)
+| Método | Endpoint            | Descrição                     |
+|--------|---------------------|-------------------------------|
+| GET    | `/categories`       | Lista todas categorias        |
+| GET    | `/categories/{id}`  | Busca categoria por ID        |
+
+
+**Exemplo:**
+```http
+GET http://localhost:8093/categories 
+Content-Type: application/json
+
+{
+  
+   
+ {
+        "id": 2,
+        "name": "Books"
+    }
+````
+
+
+
+### 🛒 **Pedidos** (`/orders`)
+| Método | Endpoint               | Descrição                     |
+|--------|------------------------|-------------------------------|
+| GET    | `/orders`              | Lista pedidos                 |
+| GET    | `/orders/{id}`         | Busca pedido por ID           |
+
+
+**Exemplo:**
+```http
+GET http://localhost:8093/categories 
+Content-Type: application/json
+
+ {
+        "moment": "2019-06-20T19:53:07Z",
+        "orderstatus": "PAID",
+        "id": 1,
+        "client": {
+            "id": 1,
+            "name": "Maria Brown",
+            "email": "maria@gmail.com",
+            "phone": "988888888",
+            "password": "*****"
+        },
+        "payment": {
+            "id": 1,
+            "moment": "2019-06-20T22:53:07Z"
+        },
+        "total": 1431.0,
+        "items": [
+            {
+                "quantity": 2,
+                "price": 90.5,
+                "product": {
+                    "id": 1,
+                    "name": "The Lord of the Rings",
+                    "descripton": "Lorem ipsum dolor sit amet, consectetur.",
+                    "price": 90.5,
+                    "imgUrl": "",
+                    "categories": [
+                        {
+                            "id": 2,
+                            "name": "Books"
+                        }
+                    ]
+                }
+````
+
+
+
 
 
 
