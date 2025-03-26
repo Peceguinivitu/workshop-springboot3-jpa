@@ -164,39 +164,40 @@ Content-Type: application/json
 GET http://localhost:8093/categories 
 Content-Type: application/json
 
- {
-        "moment": "2019-06-20T19:53:07Z",
-        "orderstatus": "PAID",
+{
+    "moment": "2019-06-20T19:53:07Z",
+    "orderstatus": "PAID",
+    "id": 1,
+    "client": {
         "id": 1,
-        "client": {
-            "id": 1,
-            "name": "Maria Brown",
-            "email": "maria@gmail.com",
-            "phone": "988888888",
-            "password": "*****"
-        },
-        "payment": {
-            "id": 1,
-            "moment": "2019-06-20T22:53:07Z"
-        },
-        "total": 1431.0,
-        "items": [
-            {
-                "quantity": 2,
+        "name": "Maria Brown",
+        "email": "maria@gmail.com",
+        "phone": "988888888",
+        "password": "123456"
+    },
+    "payment": {
+        "id": 1,
+        "moment": "2019-06-20T22:53:07Z"
+    },
+    "items": [
+        {
+            "quantity": 2,
+            "price": 90.5,
+            "product": {
+                "id": 1,
+                "name": "The Lord of the Rings",
+                "descripton": "Lorem ipsum dolor sit amet, consectetur.",
                 "price": 90.5,
-                "product": {
-                    "id": 1,
-                    "name": "The Lord of the Rings",
-                    "descripton": "Lorem ipsum dolor sit amet, consectetur.",
-                    "price": 90.5,
-                    "imgUrl": "",
-                    "categories": [
-                        {
-                            "id": 2,
-                            "name": "Books"
-                        }
-                    ]
-                }
+                "imgUrl": "",
+                "categories": [
+                    {
+                        "id": 2,
+                        "name": "Books"
+                    }
+                ]
+            },
+            "subtotal": 181.0
+        },
 ````
 
 
